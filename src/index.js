@@ -32,6 +32,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "2FA Backend is running 🚀"
+  });
+});
+
+
 //Routes
 app.use("/api/auth", authRoutes);
 
